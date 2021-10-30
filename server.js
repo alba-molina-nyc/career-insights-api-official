@@ -4,20 +4,14 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const contactsController = require('./controllers/contacts');
 const admin = require('firebase-admin');
-const serviceAccount = require('./career-insights-official-firebase-adminsdk-alxt3-9b6bb479ed.json');
+
 
 // Initialize Express App
 const app = express();
 
 // Configure Settings
 require('dotenv').config();
-const { 
-    PORT=3001, 
-    CLIENT_ID,
-    PRIVATE_KEY, 
-    DATABASE_URL, 
-    PRIVATE_KEY_ID, } = process.env;
-
+const { DATABASE_URL, PORT=3001 } = process.env;
 // Configure connection to MongoDB
 mongoose.connect(DATABASE_URL);
 const db = mongoose.connection;
