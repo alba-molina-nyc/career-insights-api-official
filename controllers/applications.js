@@ -4,7 +4,7 @@ const Application = require('../models/application');
 // Create router object
 const router = express.Router();
 
-router.get('/applications', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.json(await Application.find({managedBy: req.user.uid}));
     } catch (error) {

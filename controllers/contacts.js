@@ -7,7 +7,7 @@ const router = express.Router();
 // Define routes/controllers
 
 // Index Route
-router.get('/contacts', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.json(await Contact.find({managedBy: req.user.uid}));
     } catch (error) {
@@ -16,7 +16,7 @@ router.get('/contacts', async (req, res) => {
 });
 
 // Create Route
-router.post('/contacts', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         res.json(await Contact.create(req.body));
     } catch (error) {

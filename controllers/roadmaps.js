@@ -2,7 +2,7 @@ const express = require('express');
 const Roadmap = require('../models/roadmap');
 // Create router object
 const router = express.Router();
-router.get('/roadmap', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.json(await Roadmap.find({managedBy: req.user.uid}));
     } catch (error) {

@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // Define the Schema
 
-const noteSchema = new Schema({
-    content: String,
-    createdBy: String,
+// const noteSchema = new Schema({
+//     content: String,
+//     createdBy: String,
    
-}, { timestamps: true });
+// }, { timestamps: true });
 
 const contactSchema = new Schema({
     firstName: String,
@@ -18,7 +18,7 @@ const contactSchema = new Schema({
     role: String,
     lastContacted: Date,
     managedBy: String, // <= the google firebase user's uid number
-    notes: [noteSchema]
+    // notes: [noteSchema]
 }, { timestamps: true });
 
 // Export the result of compiling the Schema into a model
