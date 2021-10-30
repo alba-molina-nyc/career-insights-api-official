@@ -8,5 +8,23 @@
     "init": "^0.1.2",
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "career-insights-api-official",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alba-molina-nyc/career-insights-api-official.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alba-molina-nyc/career-insights-api-official/issues"
+  },
+  "homepage": "https://github.com/alba-molina-nyc/career-insights-api-official#readme",
+  "description": ""
 }
