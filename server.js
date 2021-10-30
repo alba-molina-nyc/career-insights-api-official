@@ -25,21 +25,21 @@ app.use(cors()); // attaches a Access-Control-Allow-Origin header to the respons
 app.use(express.json()); // creates req.body
 app.use(morgan('dev'));
 
-// Authorization Middleware
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-  });
+// // Authorization Middleware
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount)
+//   });
   
-  app.use(function(req, res, next) {
-      const token = req.get('Authorization')
-      console.log(token);
-      next();
-  });
+//   app.use(function(req, res, next) {
+//       const token = req.get('Authorization')
+//       console.log(token);
+//       next();
+//   });
   
   
   // Mount Routes
   app.get('/api', (req, res) => {
-      res.json({message: 'Welcome to the React CRM API'})
+      res.json({message: 'Welcome to the Career Insights API'})
   });
   
   app.use('/api/contacts', contactsController);
