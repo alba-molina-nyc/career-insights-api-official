@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const contactsController = require('./controllers/contacts');
+// const applicationsController = require('./controllers/applications');
+// const roadmapsController = require('./controllers/roadmaps');
 const admin = require('firebase-admin');
 
 
@@ -43,6 +45,8 @@ app.use(morgan('dev'));
   });
   
   app.use('/api/contacts', contactsController);
+//   app.use('/api/applications', applicationsController);
+//   app.use('/api/roadmaps', roadmapsController);
   
   // catch all route - for catching requests for routes that are not found
   app.get('/api/*', (req, res) => {

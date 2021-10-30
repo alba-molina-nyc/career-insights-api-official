@@ -7,7 +7,7 @@ const router = express.Router();
 // Define routes/controllers
 
 // Index Route
-router.get('/', async (req, res) => {
+router.get('/contacts', async (req, res) => {
     try {
         res.json(await Contact.find({managedBy: req.user.uid}));
     } catch (error) {
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create Route
-router.post('/', async (req, res) => {
+router.post('/contacts', async (req, res) => {
     try {
         res.json(await Contact.create(req.body));
     } catch (error) {
@@ -24,17 +24,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-// /api/contacts/dwndohwudwudgwgdiuwgdiu/notes
-router.post('/:id/notes', async (req, res) => {
-    try {
-        const contact = await Contact.findById(req.params.id);
-        contact.notes.push(req.body); // pushes the data into the notes array in memory only
-        await contact.save(); // we call save to persist the changes in MongoDB
-        res.json(contact);
-    } catch (error) {
-        res.status(401).json({message: 'Sorry Something Went Wrong'});
-    }
-});
+// // /api/contacts/dwndohwudwudgwgdiuwgdiu/notes
+// router.post('/:id/notes', async (req, res) => {
+//     try {
+//         const contact = await Contact.findById(req.params.id);
+//         contact.notes.push(req.body); // pushes the data into the notes array in memory only
+//         await contact.save(); // we call save to persist the changes in MongoDB
+//         res.json(contact);
+//     } catch (error) {
+//         res.status(401).json({message: 'Sorry Something Went Wrong'});
+//     }
+// });
 
-// Export the router object
+// // Export the router object
 module.exports = router;
