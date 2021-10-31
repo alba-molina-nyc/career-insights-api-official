@@ -1,40 +1,32 @@
 // Require dependencies
 const express = require('express');
 const Contact = require('../models/contact');
+
+
 // Create router object
 const router = express.Router();
 
-// Define routes/controllers
+module.exports = router;
 
-// Index Route
-router.get('/', async (req, res) => {
+//Index Route
+router.get('/contacts', async (req,res) => {
     try {
-        res.json(await Contact.find({managedBy: req.user.uid}));
-    } catch (error) {
-        res.status(401).json({message: 'Please login to see contacts'});
+       res.json(await Contact.find({}));
+        } catch (error) {
+        res.status(401).json({message: 'please login to see contacts'})
     }
 });
+router.get('/contacts/new', async (req, res) => {
+   res.json('this is the new contacts route')
+ });
 
-// Create Route
-router.post('/', async (req, res) => {
+router.post('/contacts/new', async (req, res) => {
     try {
         res.json(await Contact.create(req.body));
     } catch (error) {
         res.status(401).json({message: 'Please login to create a contact'});
     }
 });
+//Create Route
 
-// // /api/contacts/dwndohwudwudgwgdiuwgdiu/notes
-// router.post('/:id/notes', async (req, res) => {
-//     try {
-//         const contact = await Contact.findById(req.params.id);
-//         contact.notes.push(req.body); // pushes the data into the notes array in memory only
-//         await contact.save(); // we call save to persist the changes in MongoDB
-//         res.json(contact);
-//     } catch (error) {
-//         res.status(401).json({message: 'Sorry Something Went Wrong'});
-//     }
-// });
-
-// // Export the router object
 module.exports = router;

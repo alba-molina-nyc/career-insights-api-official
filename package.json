@@ -7,10 +7,12 @@
     "firebase-admin": "^10.0.0",
     "init": "^0.1.2",
     "mongoose": "^6.0.12",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.14"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "name": "career-insights-api-official",
   "version": "1.0.0",
@@ -26,5 +28,6 @@
     "url": "https://github.com/alba-molina-nyc/career-insights-api-official/issues"
   },
   "homepage": "https://github.com/alba-molina-nyc/career-insights-api-official#readme",
+  "devDependencies": {},
   "description": ""
 }
