@@ -27,11 +27,11 @@ router.post('/contacts', async (req, res) => {
     }
 });
 
-router.post('contacts/:id/notes', async (req, res) => {
+router.post('/contacts/:id/notes', async (req, res) => {
     try {
         const contact = await Contact.findById(req.params.id);
-        contact.notes.push(req.body); // pushes the data into the notes array in memory only
-        await contact.save(); // we call save to persist the changes in MongoDB
+        contact.notes.push(req.body);
+        await contact.save();
         res.json(contact);
     } catch (error) {
         res.status(401).json({message: 'Sorry Something Went Wrong'});
