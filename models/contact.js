@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const noteSchema = new Schema({
+    content: String,
+    createdBy: String
+}, { timestamps: true });
+
 const contactSchema = new Schema({
     firstName: String,
     lastName: String,
@@ -8,8 +13,8 @@ const contactSchema = new Schema({
     companyName: String,
     role: String,
     lastContacted: Date,
-    managedBy: String, // <= the google firebase user's uid number
-    // notes: [noteSchema]
+    managedBy: String, 
+    notes: [noteSchema]
 }, { timestamps: true });
 
 

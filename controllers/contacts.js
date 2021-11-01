@@ -26,6 +26,18 @@ router.post('/contacts', async (req, res) => {
         res.status(401).json({message: 'Please login to create a contact'});
     }
 });
+
+router.post('contacts/:id/notes', async (req, res) => {
+    try {
+        const contact = await Contact.findById(req.params.id);
+        contact.notes.push(req.body); // pushes the data into the notes array in memory only
+        await contact.save(); // we call save to persist the changes in MongoDB
+        res.json(contact);
+    } catch (error) {
+        res.status(401).json({message: 'Sorry Something Went Wrong'});
+    }
+});
+
 //Create Route
 
 module.exports = router;
