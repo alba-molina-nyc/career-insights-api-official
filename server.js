@@ -13,7 +13,11 @@ const app = express();
 //config settings
 require('dotenv').config();
 const { 
-  DATABASE_URL, PORT=3001,} = process.env;
+  DATABASE_URL, 
+  PORT=3001,
+  PRIVATE_KEY,
+  PRIVATE_KEY_ID,
+  CLIENT_ID} = process.env;
 
 //configure mongodb
 mongoose.connect(DATABASE_URL);
@@ -27,6 +31,13 @@ db.on('error', (error) => console.log('MongoDB has an error ' + error.message));
 app.use(cors()); 
 app.use(express.json()); 
 app.use(morgan('dev'));
+
+//authorization middleware
+app.use(function(req, res, next) {
+  const token = req.get('Authorization')
+  console.log(token);
+  next();
+});
 
 //mount routes'
 
