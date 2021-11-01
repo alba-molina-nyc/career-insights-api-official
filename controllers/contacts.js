@@ -6,12 +6,11 @@ const Contact = require('../models/contact');
 // Create router object
 const router = express.Router();
 
-module.exports = router;
 
 //Index Route
 router.get('/contacts', async (req,res) => {
     try {
-       res.json(await Contact.find({}));
+       res.json(await Contact.find({managedBy: req.user.uid}));
         } catch (error) {
         res.status(401).json({message: 'please login to see contacts'})
     }
