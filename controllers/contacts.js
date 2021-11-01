@@ -17,7 +17,7 @@ router.get('/contacts', async (req,res) => {
     }
 });
 router.get('/contacts/new', async (req, res) => {
-   res.json('this is the new contacts route')
+   res.json('this is the create new contacts route')
  });
 
 router.post('/contacts/new', async (req, res) => {
