@@ -16,11 +16,11 @@ router.get('/contacts', async (req,res) => {
         res.status(401).json({message: 'please login to see contacts'})
     }
 });
-router.get('/contacts/new', async (req, res) => {
+router.get('/contacts', async (req, res) => {
    res.json('this is the create new contacts route')
  });
 
-router.post('/contacts/new', async (req, res) => {
+router.post('/contacts', async (req, res) => {
     try {
         res.json(await Contact.create(req.body));
     } catch (error) {
