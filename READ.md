@@ -12,6 +12,12 @@
 ### Express
 ### React
 ### Google Firebase
+### Chartjs
 
+![create](create.png)
+![data and analytics](data&analytics.png)
+![view more details](viewMoreDetails.png)
+![job and App Dashboard](jobAppDashboard.png)
+![firebase Google Sign In](firebaseGoogleSignIn.png)
 # Future Enhancements
 
