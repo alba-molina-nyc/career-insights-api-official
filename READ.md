@@ -18,6 +18,6 @@
 ![data and analytics](data&analytics.png)
 ![view more details](viewMoreDetails.png)
 ![job and App Dashboard](jobAppDashboard.png)
-![firebase Google Sign In](firebaseGoogleSignIn.png)
+![firebase Google Sign In](/.imgs/firebaseGoogleSignIn.png)
 # Future Enhancements
 
