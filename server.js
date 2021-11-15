@@ -33,7 +33,6 @@ app.use(express.json()); // creates req.body
 app.use(morgan('dev'));
 
 // Authorization Middleware
-
 admin.initializeApp({
     credential: admin.credential.cert({
       "type": "service_account",
